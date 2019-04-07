@@ -1,1 +1,7 @@
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const GET_PROFILE = "GET_PROFILE";
+export const SAVE_PROFILE = "SAVE_PROFILE";
+export const ADD_ADDRESS = "ADD_ADDRESS";
+export const DELETE_ADDRESS = "DELETE_ADDRESS";
+export const GET_ORDERS = "GET_ORDERS";
+export const GET_CATEGORIES = "GET_CATEGORIES";
