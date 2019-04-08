@@ -9,7 +9,7 @@ const categoriesReducer = (state = initialState, action) => {
     case actionTypes.GET_CATEGORIES:
       return {
         ...state,
-        profile: action.payload
+        categories: action.payload
       };
 
     default:

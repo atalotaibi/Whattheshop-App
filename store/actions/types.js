@@ -5,3 +5,7 @@ export const ADD_ADDRESS = "ADD_ADDRESS";
 export const DELETE_ADDRESS = "DELETE_ADDRESS";
 export const GET_ORDERS = "GET_ORDERS";
 export const GET_CATEGORIES = "GET_CATEGORIES";
+export const GET_ORDER = "GET_ORDER";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_CART = "DELETE_CART";
+export const CREATE_ORDER = "CREATE_ORDER";
