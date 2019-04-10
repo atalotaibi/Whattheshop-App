@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View } from "react-native";
 import { connect } from "react-redux";
-import * as actionCreators from "./store/actions";
+import * as actionCreators from "../../store/actions";
 
 // NativeBase Components
 import { Container, Header } from "native-base";
@@ -15,7 +15,8 @@ import AppContainer from "../../Navigation";
 
 class HomePage extends Component {
   componentDidMount() {
-    this.props.getCategories(), this.props.getProducts();
+    this.props.getCategories();
+    this.props.getProducts();
   }
   render() {
     return (
@@ -28,7 +29,7 @@ class HomePage extends Component {
 }
 const mapDispatchToProps = dispatch => ({
   getCategories: () => dispatch(actionCreators.getCategories()),
-  getProducts: () => dispatch(actionCreators.getCategories())
+  getProducts: () => dispatch(actionCreators.getProducts())
 });
 
 export default connect(

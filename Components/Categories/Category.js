@@ -12,8 +12,8 @@ class Category extends Component {
     const { category } = this.props;
     return (
       <ImageBackground
-      // source={{ uri: category.image }}
-      // style={styles.background}
+        source={{ uri: category.image }}
+        style={styles.background}
       >
         <View style={styles.overlay} />
         <ListItem

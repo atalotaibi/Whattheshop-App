@@ -16,18 +16,19 @@ class CategoryDetail extends Component {
 
   render() {
     const category = this.props.navigation.getParam("category");
-    let category;
+    let categoryDetail;
 
     // if (loading) {
     //   return <Spinner />;
     // }
-    category = category.products.map(product => (
+
+    categoryDetail = category.products.map(product => (
       <Product product={product} key={product.id} />
     ));
 
     return (
       <Content>
-        <List>{category}</List>
+        <List>{categoryDetail}</List>
       </Content>
     );
   }

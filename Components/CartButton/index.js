@@ -10,12 +10,10 @@ class CartButton extends Component {
     return (
       <Button transparent>
         <Text style={{ color: "white", fontSize: 25 }}>
-          {this.props.quantity && this.props.quantity}
+          {/* {this.props.quantity && this.props.quantity} */}
           <Icon
             onPress={() =>
-              this.props.navigation.navigate(
-                this.props.user ? "CoffeeCart" : "Login"
-              )
+              this.props.navigation.navigate(this.props.user ? "Cart" : "Login")
             }
             name="shoppingcart"
             type="AntDesign"
@@ -27,7 +25,7 @@ class CartButton extends Component {
 }
 
 const mapStateToProps = state => ({
-  quantity: quantityCounter(state.cartReducer.items),
+  // quantity: quantityCounter(state.cartReducer.items),
   user: state.authReducer.user
 });
 

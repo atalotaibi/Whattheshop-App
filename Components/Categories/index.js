@@ -16,19 +16,20 @@ class CategoryList extends Component {
   };
 
   render() {
-    const { categories } = this.props.categoriesReducer;
-    let category;
+    const categories = this.props.categoriesReducer;
+    let categoryList;
 
     // if (loading) {
     //   return <Spinner />;
     // }
-    category = categories.map(categoy => (
-      <Category categoy={categoy} key={category.id} />
+    console.log(categories);
+    categoryList = categories.map(category => (
+      <Category category={category} key={category.id} />
     ));
 
     return (
       <Content>
-        <List>{category}</List>
+        <List>{categoryList}</List>
       </Content>
     );
   }

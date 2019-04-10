@@ -8,7 +8,7 @@ import { List, Content, Spinner } from "native-base";
 // Component
 import Product from "./Product";
 import CartButton from "../CartButton";
-import LogoutButton from "../LogoutButton";
+// import LogoutButton from "../LogoutButton";
 
 class ProductList extends Component {
   static navigationOptions = {
@@ -17,20 +17,20 @@ class ProductList extends Component {
   };
 
   render() {
-    const { products } = this.props.productReducer;
-    let products;
+    const products = this.props.productReducer;
+    let productList;
 
     // if (loading) {
     //   return <Spinner />;
     // }
-    products = products.map(product => (
+    productList = products.map(product => (
       <Product product={product} key={product.id} />
     ));
 
     return (
       <Content>
-        <List>{products}</List>
-        <LogoutButton />
+        <List>{productList}</List>
+        {/* <LogoutButton /> */}
       </Content>
     );
   }

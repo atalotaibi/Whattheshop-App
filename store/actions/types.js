@@ -9,3 +9,5 @@ export const GET_ORDER = "GET_ORDER";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const DELETE_CART = "DELETE_CART";
 export const CREATE_ORDER = "CREATE_ORDER";
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const GET_PRODUCT = "GET_PRODUCT";
