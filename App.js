@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import { Spinner } from "native-base";
-import Login from "./Components/Login";
+import HomePage from "./Components/HomePage";
 import { Provider } from "react-redux";
 
 // Store
 import store from "./store";
 
 class App extends Component {
-  state = {
-    loading: true
-  };
+  // state = {
+  //   loading: true
+  // };
 
   async componentDidMount() {
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
     });
-    this.setState({ loading: false });
+    // this.setState({ loading: false });
   }
 
   render() {
-    if (this.state.loading) {
-      return <Spinner color="white" />;
-    }
+    // if (this.state.loading) {
+    //   return <Spinner color="white" />;
+    // }
     return (
       <Provider store={store}>
-        <Login />
+        <HomePage />
       </Provider>
     );
   }

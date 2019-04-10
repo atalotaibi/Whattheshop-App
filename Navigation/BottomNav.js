@@ -2,12 +2,16 @@ import { createBottomTabNavigator } from "react-navigation";
 import React from "react";
 import { Icon } from "native-base";
 import AuthStack from "./AuthStack";
-import ClassroomStack from "./ClassroomStack";
+import ProductStack from "./ProductStack";
+import CategoryStack from "./CategoryStack";
+import CartStack from "./CartStack";
 
 const BottomNav = createBottomTabNavigator(
   {
     Auth: AuthStack,
-    Classroom: ClassroomStack
+    Products: ProductStack,
+    Categories: CategoryStack,
+    Cart: CartStack
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -20,11 +24,14 @@ const BottomNav = createBottomTabNavigator(
             iconName = "account";
             iconType = "MaterialCommunityIcons";
             break;
-          case "Coffee":
-            iconName = "coffee";
-            iconType = "MaterialCommunityIcons";
+          case "Categories":
+            iconName = "caretright";
+            iconType = "AntDesign";
             break;
-          case "Order":
+          case "Products":
+            iconName = "car";
+            iconType = "AntDesign";
+          case "Cart":
             iconName = "cart";
             iconType = "MaterialCommunityIcons";
             break;

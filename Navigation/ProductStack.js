@@ -1,15 +1,12 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import Cart from "../Components/CoffeeCart";
-import List from "../Components/ProductList";
-import Detail from "../Components/CoffeeDetail";
-import Login from "../Components/Login";
-import Home from "../Components/HomePage";
+import ProductList from "../Components/ProductList";
+import ProductDetail from "../Components/ProductDetail";
 
-const CoffeeStack = createStackNavigator(
+const ProductStack = createStackNavigator(
   {
-    ProductList: List,
-    CoffeeDetail: Detail
+    ProductList: ProductList,
+    ProductDetail: ProductDetail
   },
   {
     initialRouteName: "ProductList",
@@ -28,4 +25,4 @@ const CoffeeStack = createStackNavigator(
   }
 );
 
-export default CoffeeStack;
+export default ProductStack;

@@ -18,7 +18,7 @@ class ProductList extends Component {
 
   render() {
     const { products, loading } = this.props.productReducer;
-    let shops;
+    let products;
 
     if (loading) {
       return <Spinner />;
@@ -29,7 +29,7 @@ class ProductList extends Component {
 
     return (
       <Content>
-        <List>{shops}</List>
+        <List>{products}</List>
         <LogoutButton />
       </Content>
     );

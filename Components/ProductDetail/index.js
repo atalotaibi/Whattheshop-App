@@ -20,44 +20,45 @@ import {
 import styles from "./styles";
 
 //List
-import ProductList from "../ProductList/list";
 import CartButton from "../CartButton";
-import ProductList from "../ProductList/index";
 
 class ProductDetail extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam("coffeeShop").name,
+      title: navigation.getParam("product").name,
       headerRight: <CartButton />
     };
   };
 
+  state = {
+    product: {}
+  };
+
   handlePress = () => {
-    const newItem = {
-      ...this.state,
-      quantity: 1
-    };
-    this.props.addItemToCart(newItem);
+    this.setState({
+      product: this.props.navigation.getParam("product")
+    });
+    this.props.addItemToCart(this.state);
   };
 
   render() {
-    const { product, loading } = this.props.productReducer;
-    if (loading) return <Content />;
-    const coffeeshop = this.props.navigation.getParam("coffeeShop");
+    // const { product, loading } = this.props.productReducer;
+    // if (loading) return <Content />;
+    const product = this.props.navigation.getParam("product");
     return (
       <Content>
         <List>
           <ListItem style={styles.top}>
             <Left>
               <Text style={styles.text}>
-                {coffeeshop.name + "\n"}
-                <Text note>{coffeeshop.location}</Text>
+                {product.name + "\n"}
+                <Text note>{product.description}</Text>
               </Text>
             </Left>
             <Body />
-            <Right>
-              <Thumbnail bordered source={{ uri: coffeeshop.img }} />
-            </Right>
+            {/* <Right>
+              <Thumbnail bordered source={{ uri: product.img }} />
+            </Right> */}
           </ListItem>
 
           <Button full danger onPress={this.handlePress}>
@@ -69,15 +70,11 @@ class ProductDetail extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  productReducer: state.productReducer.product
-});
-
 const mapDispatchToProps = dispatch => ({
-  addItemToCart: item => dispatch(actionCreators.addItemToCart(item))
+  addToCart: product => dispatch(actionCreators.addToCart(product))
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(ProductDetail);

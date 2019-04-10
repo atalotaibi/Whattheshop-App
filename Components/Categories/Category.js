@@ -7,21 +7,21 @@ import { ListItem, Card, CardItem, Thumbnail, Text, Left } from "native-base";
 // Style
 import styles from "./styles";
 
-class Product extends Component {
+class Category extends Component {
   render() {
-    const { product } = this.props;
+    const { category } = this.props;
     return (
       <ImageBackground
-        source={{ uri: product.background }}
-        style={styles.background}
+      // source={{ uri: category.image }}
+      // style={styles.background}
       >
         <View style={styles.overlay} />
         <ListItem
           button
           style={styles.listitem}
           onPress={() =>
-            this.props.navigation.navigate("ProductDetail", {
-              product: product
+            this.props.navigation.navigate("CategoryDetail", {
+              category: category
             })
           }
         >
@@ -29,11 +29,11 @@ class Product extends Component {
             <CardItem style={styles.transparent}>
               <Left>
                 <Thumbnail
-                  bordered
-                  source={{ uri: product.img }}
-                  style={styles.thumbnail}
+                //   bordered
+                //   source={{ uri: category.img }}
+                //   style={styles.thumbnail}
                 />
-                <Text style={styles.text}>{product.name}</Text>
+                <Text style={styles.text}>{category.name}</Text>
               </Left>
             </CardItem>
           </Card>
@@ -43,4 +43,4 @@ class Product extends Component {
   }
 }
 
-export default withNavigation(Product);
+export default withNavigation(Category);
