@@ -20,8 +20,12 @@ const BottomNav = createBottomTabNavigator(
             iconName = "account";
             iconType = "MaterialCommunityIcons";
             break;
-          case "Classroom":
-            iconName = "google-classroom";
+          case "Coffee":
+            iconName = "coffee";
+            iconType = "MaterialCommunityIcons";
+            break;
+          case "Order":
+            iconName = "cart";
             iconType = "MaterialCommunityIcons";
             break;
           default:
