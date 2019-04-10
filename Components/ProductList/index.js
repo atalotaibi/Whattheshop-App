@@ -17,12 +17,12 @@ class ProductList extends Component {
   };
 
   render() {
-    const { products, loading } = this.props.productReducer;
+    const { products } = this.props.productReducer;
     let products;
 
-    if (loading) {
-      return <Spinner />;
-    }
+    // if (loading) {
+    //   return <Spinner />;
+    // }
     products = products.map(product => (
       <Product product={product} key={product.id} />
     ));

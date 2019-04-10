@@ -3,7 +3,7 @@ import { Icon, Button, Text } from "native-base";
 import { withNavigation } from "react-navigation";
 
 import { connect } from "react-redux";
-import { quantityCounter } from "../../Utilities/Counter";
+// import { quantityCounter } from "../../Utilities/Counter";
 
 class CartButton extends Component {
   render() {
